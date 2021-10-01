@@ -17,9 +17,33 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
-}
+  const card = document.createElement('div');
+  const headLine = document.createElement('div'); 
+  const author = document.createElement('div');
+  const imgContainer = document.createElement('div');
+  const img = document.createElement('img'); 
+  const span = document.createElement('span');
 
-const cardAppender = (selector) => {
+  card.classList.add('card');
+  headLine.classList.add('headline');
+  author.classList.add('author');
+  imgContainer.classList.add('img-container');
+  img.classList.add('img');
+
+  img.src = article.authorPhoto;
+
+  headLine.textContent = `${article.headline}`; 
+  span.textContent = `By ${article.authorName}`;
+
+  imgContainer.appendChild(img); 
+  author.appendChild(imgContainer);
+  author.appendChild(span); 
+  card.appendChild(headLine);
+  card.appendChild(author);
+
+  return card;
+}
+const cardAppender = (selector) =>{
   // TASK 6
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
