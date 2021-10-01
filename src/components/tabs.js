@@ -12,10 +12,19 @@ const Tabs = (topics) => {
   //   <div class="tab">bootstrap</div>
   //   <div class="tab">technology</div>
   // </div>
-  //
-}
+  const div = document.createElement('div');
+  const newArray = topics;
+    newArray.forEach(item =>{
+      let newElement  = document.createElement('div');
+      newElement.classList.add('tab');
+      newElement.textContent = item;
+      div.appendChild(newElement);
+  
+   });
+   return div;  
+  }
 
-const tabsAppender = (selector) => {
+const tabsAppender = (selector) =>{
   // TASK 4
   // ---------------------
   // Implement this function which takes a css selector as its only argument.
